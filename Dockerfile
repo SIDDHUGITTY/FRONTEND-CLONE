@@ -1,8 +1,14 @@
 FROM node:18-alpine
-WORKDIR /app
-COPY . /app
-RUN npm install \
-    npm install expo
-EXPOSE 8081
-CMD ["npx", "expo", "start", "--tunnel"]
 
+WORKDIR /app
+
+COPY package*.json ./
+
+RUN npm install
+RUN npm install expo --save-dev
+
+COPY . .
+
+EXPOSE 8081 19000 19001 19002
+
+CMD ["npx", "expo", "start", "--tunnel"]
