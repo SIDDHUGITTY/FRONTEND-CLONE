@@ -1,0 +1,9 @@
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: test_frontend
+    restart: unless-stopped
+    ports:
+      - "8081:8081"
