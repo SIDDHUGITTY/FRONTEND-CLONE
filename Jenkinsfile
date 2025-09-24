@@ -1,10 +1,6 @@
 pipeline {
     agent any
 
-    triggers {
-        githubPush()
-    }
-
     environment {
         IMAGE_NAME = "frontend-image"
         CONTAINER_NAME = "frontend-container"
